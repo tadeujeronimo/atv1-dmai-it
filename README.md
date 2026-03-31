@@ -1,29 +1,29 @@
 # DeliveryApp - Atividade 1 (DMAI)
 
-Aplicativo Android nativo desenvolvido na Atividade 1 do curso Desenvolvimento Mobile Android Intermediario (iTalents).
+Aplicativo Android nativo desenvolvido na Atividade 1 do curso Desenvolvimento Mobile Android Intermediário (iTalents).
 
-O projeto simula um fluxo de delivery com autenticacao, listagem de produtos, carrinho, favoritos, pedidos e gerenciamento de usuarios/produtos.
+O projeto simula um fluxo de delivery com autenticação, listagem de produtos, carrinho, favoritos, pedidos e gerenciamento de usuários/produtos.
 
 ## Funcionalidades
 
-- Login de usuario com token JWT.
+- Login de usuário com token JWT.
 - Cadastro de cliente.
 - Listagem de produtos.
-- Cadastro, edicao e remocao de produtos.
-- Marcacao de produtos favoritos (persistencia local).
-- Carrinho de compras com atualizacao de itens.
-- Finalizacao de pedido e historico de pedidos.
-- Cadastro e selecao de enderecos (persistencia local).
-- Listagem e gerenciamento de usuarios.
+- Cadastro, edição e remoção de produtos.
+- Marcação de produtos favoritos (persistência local).
+- Carrinho de compras com atualização de itens.
+- Finalização de pedido e histórico de pedidos.
+- Cadastro e seleção de endereços (persistência local).
+- Listagem e gerenciamento de usuários.
 
-## Arquitetura e padroes
+## Arquitetura e padrões
 
 - Kotlin + Android Views (ViewBinding e DataBinding).
 - MVVM com `ViewModel` e `LiveData`.
 - Repositories para orquestrar fontes locais e remotas.
-- Injeccao de dependencia com Hilt.
-- Persistencia local com Room.
-- Comunicacao HTTP com Retrofit + OkHttp + Gson.
+- Injeção de dependência com Hilt.
+- Persistência local com Room.
+- Comunicação HTTP com Retrofit + OkHttp + Gson.
 
 ## Tecnologias
 
@@ -45,21 +45,21 @@ app/src/main/java/com/tadeujeronimo/deliveryapp
 |  |- repositories # regra de acesso a dados
 |  |- service      # interfaces Retrofit
 |  |- util         # SharedPreferences, interceptor, converters
-|- di              # modulos Hilt
+|- di              # módulos Hilt
 |- ui              # Activities, adapters, menu, interfaces
 |- DeliveryApplication.kt
 ```
 
 ## Pre-requisitos
 
-- Android Studio (recomendado: versao recente com suporte ao AGP 8.7+).
+- Android Studio (recomendado: versão recente com suporte ao AGP 8.7+).
 - JDK 11.
-- Gradle Wrapper (ja incluido no repositorio).
+- Gradle Wrapper (já incluído no repositório).
 - API backend rodando em rede local.
 
-## Configuracao da API
+## Configuração da API
 
-Atualmente a base URL esta fixa em:
+Atualmente a base URL está fixa em:
 
 ```kotlin
 http://10.0.2.2:3000/
@@ -71,15 +71,15 @@ Arquivo:
 app/src/main/java/com/tadeujeronimo/deliveryapp/di/ApiModule.kt
 ```
 
-Se necessario, ajuste para o IP da maquina que esta executando o backend.
+Se necessário, ajuste para o IP da máquina que está executando o backend.
 
 ## Como executar
 
-1. Clone o repositorio.
+1. Clone o repositório.
 2. Abra no Android Studio.
 3. Aguarde o sync do Gradle.
-4. Configure a URL da API (se necessario).
-5. Execute em emulador ou dispositivo fisico.
+4. Configure a URL da API (se necessário).
+5. Execute em emulador ou dispositivo físico.
 
 ### Via terminal
 
@@ -95,19 +95,19 @@ Para executar testes:
 ./gradlew connectedAndroidTest
 ```
 
-## Fluxo basico do app
+## Fluxo básico do app
 
-1. Usuario autentica em `LoginActivity`.
+1. Usuário autentica em `LoginActivity`.
 2. App salva token em `SharedPreferences`.
 3. `AuthInterceptor` injeta o token no header `Authorization`.
-4. Usuario navega por produtos, favoritos, carrinho e pedidos.
-5. Enderecos, favoritos e pedidos locais sao persistidos via Room.
+4. Usuário navega por produtos, favoritos, carrinho e pedidos.
+5. Endereços, favoritos e pedidos locais são persistidos via Room.
 
-## Permissoes Android
+## Permissões Android
 
 - `android.permission.INTERNET`
 - `android.permission.ACCESS_NETWORK_STATE`
 
-## Licenca
+## Licença
 
 [GNU](LICENSE)
